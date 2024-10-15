@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./index.css";
+// import "./index.css";
 
 // Sample data for testing purposes generated using ChatGPT
 const inputData = [
@@ -730,12 +730,16 @@ const TableComponent = ({ data }) => {
                 <td className="border border-gray-500 px-6 py-2">{item.update_date}</td>
                 <td className="border border-gray-500 px-6 py-2">{item.status}</td>
                 <td className="border border-gray-500 px-6 py-2 text-center">
-                  <button
-                    onClick={() => handleDownload(item.id)}
-                    className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
-                  >
-                    Download
-                  </button>
+                  {item.status === "completed" ? (
+                    <button
+                      onClick={() => handleDownload(item.id)}
+                      className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+                    >
+                      Download
+                    </button>
+                  ) : (
+                    <span className="text-gray-400"></span>
+                  )}
                 </td>
               </tr>
             ))}
