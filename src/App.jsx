@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-// import "./index.css";
+import axios from "axios";
 
 // Sample data for testing purposes generated using ChatGPT
 const inputData = [
@@ -44,6 +44,321 @@ const inputData = [
     "update_date": "2024-07-28",
     "status": "completed",
     "id": 19274
+  },
+  {
+    "file_name": "file_12.pdf",
+    "upload_date": "2024-02-28",
+    "update_date": "2024-09-25",
+    "status": "in_progress",
+    "id": 82139
+  },
+  {
+    "file_name": "file_43.xml",
+    "upload_date": "2024-07-12",
+    "update_date": "2024-08-29",
+    "status": "completed",
+    "id": 64512
+  },
+  {
+    "file_name": "file_09.docx",
+    "upload_date": "2024-04-08",
+    "update_date": "2024-06-30",
+    "status": "pending",
+    "id": 47329
+  },
+  {
+    "file_name": "file_81.mp3",
+    "upload_date": "2024-03-22",
+    "update_date": "2024-08-11",
+    "status": "completed",
+    "id": 36182
+  },
+  {
+    "file_name": "file_45.jpg",
+    "upload_date": "2023-12-18",
+    "update_date": "2024-06-22",
+    "status": "completed",
+    "id": 42910
+  },
+  {
+    "file_name": "file_90.zip",
+    "upload_date": "2023-11-10",
+    "update_date": "2024-07-15",
+    "status": "in_progress",
+    "id": 75832
+  },
+  {
+    "file_name": "file_29.mov",
+    "upload_date": "2024-08-02",
+    "update_date": "2024-08-20",
+    "status": "pending",
+    "id": 98563
+  },
+  {
+    "file_name": "file_71.mp4",
+    "upload_date": "2024-01-31",
+    "update_date": "2024-04-05",
+    "status": "completed",
+    "id": 37184
+  },
+  {
+    "file_name": "file_13.docx",
+    "upload_date": "2024-03-08",
+    "update_date": "2024-05-28",
+    "status": "pending",
+    "id": 28591
+  },
+  {
+    "file_name": "file_12.pdf",
+    "upload_date": "2024-02-28",
+    "update_date": "2024-09-25",
+    "status": "in_progress",
+    "id": 82139
+  },
+  {
+    "file_name": "file_43.xml",
+    "upload_date": "2024-07-12",
+    "update_date": "2024-08-29",
+    "status": "completed",
+    "id": 64512
+  },
+  {
+    "file_name": "file_09.docx",
+    "upload_date": "2024-04-08",
+    "update_date": "2024-06-30",
+    "status": "pending",
+    "id": 47329
+  },
+  {
+    "file_name": "file_81.mp3",
+    "upload_date": "2024-03-22",
+    "update_date": "2024-08-11",
+    "status": "completed",
+    "id": 36182
+  },
+  {
+    "file_name": "file_45.jpg",
+    "upload_date": "2023-12-18",
+    "update_date": "2024-06-22",
+    "status": "completed",
+    "id": 42910
+  },
+  {
+    "file_name": "file_90.zip",
+    "upload_date": "2023-11-10",
+    "update_date": "2024-07-15",
+    "status": "in_progress",
+    "id": 75832
+  },
+  {
+    "file_name": "file_29.mov",
+    "upload_date": "2024-08-02",
+    "update_date": "2024-08-20",
+    "status": "pending",
+    "id": 98563
+  },
+  {
+    "file_name": "file_71.mp4",
+    "upload_date": "2024-01-31",
+    "update_date": "2024-04-05",
+    "status": "completed",
+    "id": 37184
+  },
+  {
+    "file_name": "file_13.docx",
+    "upload_date": "2024-03-08",
+    "update_date": "2024-05-28",
+    "status": "pending",
+    "id": 28591
+  },
+  {
+    "file_name": "file_12.pdf",
+    "upload_date": "2024-02-28",
+    "update_date": "2024-09-25",
+    "status": "in_progress",
+    "id": 82139
+  },
+  {
+    "file_name": "file_43.xml",
+    "upload_date": "2024-07-12",
+    "update_date": "2024-08-29",
+    "status": "completed",
+    "id": 64512
+  },
+  {
+    "file_name": "file_09.docx",
+    "upload_date": "2024-04-08",
+    "update_date": "2024-06-30",
+    "status": "pending",
+    "id": 47329
+  },
+  {
+    "file_name": "file_81.mp3",
+    "upload_date": "2024-03-22",
+    "update_date": "2024-08-11",
+    "status": "completed",
+    "id": 36182
+  },
+  {
+    "file_name": "file_45.jpg",
+    "upload_date": "2023-12-18",
+    "update_date": "2024-06-22",
+    "status": "completed",
+    "id": 42910
+  },
+  {
+    "file_name": "file_90.zip",
+    "upload_date": "2023-11-10",
+    "update_date": "2024-07-15",
+    "status": "in_progress",
+    "id": 75832
+  },
+  {
+    "file_name": "file_29.mov",
+    "upload_date": "2024-08-02",
+    "update_date": "2024-08-20",
+    "status": "pending",
+    "id": 98563
+  },
+  {
+    "file_name": "file_71.mp4",
+    "upload_date": "2024-01-31",
+    "update_date": "2024-04-05",
+    "status": "completed",
+    "id": 37184
+  },
+  {
+    "file_name": "file_13.docx",
+    "upload_date": "2024-03-08",
+    "update_date": "2024-05-28",
+    "status": "pending",
+    "id": 28591
+  },
+  {
+    "file_name": "file_12.pdf",
+    "upload_date": "2024-02-28",
+    "update_date": "2024-09-25",
+    "status": "in_progress",
+    "id": 82139
+  },
+  {
+    "file_name": "file_43.xml",
+    "upload_date": "2024-07-12",
+    "update_date": "2024-08-29",
+    "status": "completed",
+    "id": 64512
+  },
+  {
+    "file_name": "file_09.docx",
+    "upload_date": "2024-04-08",
+    "update_date": "2024-06-30",
+    "status": "pending",
+    "id": 47329
+  },
+  {
+    "file_name": "file_81.mp3",
+    "upload_date": "2024-03-22",
+    "update_date": "2024-08-11",
+    "status": "completed",
+    "id": 36182
+  },
+  {
+    "file_name": "file_45.jpg",
+    "upload_date": "2023-12-18",
+    "update_date": "2024-06-22",
+    "status": "completed",
+    "id": 42910
+  },
+  {
+    "file_name": "file_90.zip",
+    "upload_date": "2023-11-10",
+    "update_date": "2024-07-15",
+    "status": "in_progress",
+    "id": 75832
+  },
+  {
+    "file_name": "file_29.mov",
+    "upload_date": "2024-08-02",
+    "update_date": "2024-08-20",
+    "status": "pending",
+    "id": 98563
+  },
+  {
+    "file_name": "file_71.mp4",
+    "upload_date": "2024-01-31",
+    "update_date": "2024-04-05",
+    "status": "completed",
+    "id": 37184
+  },
+  {
+    "file_name": "file_13.docx",
+    "upload_date": "2024-03-08",
+    "update_date": "2024-05-28",
+    "status": "pending",
+    "id": 28591
+  },
+  {
+    "file_name": "file_12.pdf",
+    "upload_date": "2024-02-28",
+    "update_date": "2024-09-25",
+    "status": "in_progress",
+    "id": 82139
+  },
+  {
+    "file_name": "file_43.xml",
+    "upload_date": "2024-07-12",
+    "update_date": "2024-08-29",
+    "status": "completed",
+    "id": 64512
+  },
+  {
+    "file_name": "file_09.docx",
+    "upload_date": "2024-04-08",
+    "update_date": "2024-06-30",
+    "status": "pending",
+    "id": 47329
+  },
+  {
+    "file_name": "file_81.mp3",
+    "upload_date": "2024-03-22",
+    "update_date": "2024-08-11",
+    "status": "completed",
+    "id": 36182
+  },
+  {
+    "file_name": "file_45.jpg",
+    "upload_date": "2023-12-18",
+    "update_date": "2024-06-22",
+    "status": "completed",
+    "id": 42910
+  },
+  {
+    "file_name": "file_90.zip",
+    "upload_date": "2023-11-10",
+    "update_date": "2024-07-15",
+    "status": "in_progress",
+    "id": 75832
+  },
+  {
+    "file_name": "file_29.mov",
+    "upload_date": "2024-08-02",
+    "update_date": "2024-08-20",
+    "status": "pending",
+    "id": 98563
+  },
+  {
+    "file_name": "file_71.mp4",
+    "upload_date": "2024-01-31",
+    "update_date": "2024-04-05",
+    "status": "completed",
+    "id": 37184
+  },
+  {
+    "file_name": "file_13.docx",
+    "upload_date": "2024-03-08",
+    "update_date": "2024-05-28",
+    "status": "pending",
+    "id": 28591
   },
   {
     "file_name": "file_12.pdf",
@@ -667,10 +982,46 @@ const TableComponent = ({ data }) => {
   );
 
   // On Click Download Alert
-  const handleDownload = (id) => {
+  const handleDownloadAlert = (id) => {
     alert(`Downloading file with ID: ${id}`);
   };
 
+  const handleDownload = async (id) => {
+    try {
+      const response = await axios({
+        url: `http://localhost:5001/download/${id}`,  // Backend download endpoint
+        method: 'GET',
+        responseType: 'blob',
+      });
+
+      const contentDisposition = response.headers['content-disposition'];
+      let fileName = `${id}.zip`;
+      if (contentDisposition) {
+        const fileNameMatch = contentDisposition.match(/filename="?(.+)"?/i);
+        if (fileNameMatch.length === 2)
+          fileName = fileNameMatch[1];
+      }
+
+      const url = window.URL.createObjectURL(new Blob([response.data]));
+      const link = document.createElement('a');
+      link.href = url;
+      link.setAttribute('download', fileName);
+      document.body.appendChild(link);
+      link.click();
+
+      link.remove();
+      window.URL.revokeObjectURL(url);
+    } catch (error) {
+      console.error("Download error", error);
+      if (error.response) {
+        alert(`Error: ${error.response.status} - ${error.response.data}`);
+      } else if (error.request) {
+        alert("Error: No response received from server. Please try again later.");
+      } else {
+        alert(`Error: ${error.message}`);
+      }
+    }
+  };
   return (
    <div className="flex flex-col justify-center items-center min-h-screen">
       <div className="w-full max-w-4xl overflow-x-auto mb-4">
